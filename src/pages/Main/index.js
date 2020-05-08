@@ -1,11 +1,15 @@
 import React from 'react';
 
-import {View, Text} from 'react-native';
+import {Container} from './styles';
 
-const Main = () => (
-  <View>
-    <Text>Hello World</Text>
-  </View>
-);
+import Header from '~/components/Header';
+import Tabs from '~/components/Tabs';
 
-export default Main;
+export default function Main() {
+  return (
+    <Container>
+      <Header />
+      <Tabs />
+    </Container>
+  );
+}
