@@ -2,13 +2,13 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   align-items: center;
-  padding: 20px 0;
+  padding: 10px 0;
 `;
 
 export const Top = styled.View`
   flex-direction: row;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 `;
 
 export const Logo = styled.Image``;
