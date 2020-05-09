@@ -8,15 +8,24 @@ export const Container = styled.View`
 
 export const Content = styled.View`
   flex: 1;
-  max-height: 350px;
+  max-height: 380px;
+  position: relative;
 `;
 
 export const Card = styled.View`
+  position: absolute;
+  right: 0;
+  left: 0;
+  /* top: 320px; */
+  top: 0;
+  bottom: 0;
+  height: 90%;
   flex: 1;
-  margin: 0 20px;
+  justify-content: space-between;
+  margin: 20px;
   border-radius: 2px;
   background-color: #fff;
-  justify-content: space-between;
+  z-index: 5;
 `;
 
 export const CardHeader = styled.View`
@@ -39,11 +48,12 @@ export const CardFooter = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-size: 20px;
+  font-size: 19px;
   color: #777;
 `;
 
 export const Description = styled.Text`
+  margin-top: 5px;
   font-size: 34px;
   font-weight: 500;
   letter-spacing: 0.8px;
