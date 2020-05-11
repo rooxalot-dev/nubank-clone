@@ -1,3 +1,4 @@
+import {Animated} from 'react-native';
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
@@ -12,17 +13,16 @@ export const Content = styled.View`
   position: relative;
 `;
 
-export const Card = styled.View`
+export const Card = styled(Animated.View)`
   position: absolute;
   right: 0;
   left: 0;
-  top: 320px;
-  /* top: 0; */
+  top: 0;
   bottom: 0;
-  height: 90%;
+  height: 95%;
   flex: 1;
   justify-content: space-between;
-  margin: 20px;
+  margin: 10px 20px;
   border-radius: 2px;
   background-color: #fff;
   z-index: 5;

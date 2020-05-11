@@ -1,6 +1,7 @@
+import {Animated} from 'react-native';
 import styled from 'styled-components/native';
 
-export const Container = styled.View``;
+export const Container = styled(Animated.View)``;
 
 export const TabsContainer = styled.ScrollView.attrs({
   horizontal: true,
