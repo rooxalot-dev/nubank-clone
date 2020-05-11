@@ -20,6 +20,7 @@ import Menu from '~/components/Menu';
 import Tabs from '~/components/Tabs';
 
 export default function Main() {
+  let offset = 0;
   const translateY = new Animated.Value(0);
 
   const handleGestureEvent = Animated.event(
@@ -33,7 +34,35 @@ export default function Main() {
     {useNativeDriver: true},
   );
 
-  function handleStateChange(e) {}
+  function handleStateChange(e) {
+    const nativeEvent = e.nativeEvent;
+    console.log('Native Event: ', nativeEvent);
+
+    if (nativeEvent.oldState === State.ACTIVE) {
+      let cardOpened = false;
+
+      const actualTranslationY = nativeEvent.translationY;
+      offset += actualTranslationY;
+
+      if (actualTranslationY >= 100) {
+        cardOpened = true;
+      } else {
+        cardOpened = false;
+        translateY.setValue(offset);
+        translateY.setOffset(0);
+        offset = 0;
+      }
+
+      Animated.timing(translateY, {
+        toValue: cardOpened ? 360 : 0,
+        duration: 200,
+        useNativeDriver: true,
+      }).start(() => {
+        offset = cardOpened ? 360 : 0;
+        translateY.setOffset(offset);
+      });
+    }
+  }
 
   return (
     <Container>
